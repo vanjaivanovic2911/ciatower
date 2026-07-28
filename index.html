@@ -3,98 +3,285 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CIA d.o.o. i Agencija za zastupanje u osiguranju TOWER Sarajevo.">
-  <title>CIA & TOWER | Sarajevo</title>
+  <meta name="description" content="CIA d.o.o. i Agencija za zastupanje u osiguranju TOWER Sarajevo — osiguranje, registracija vozila, poslovno posredovanje i konsalting na jednom mjestu.">
+  <meta name="theme-color" content="#15332a">
+  <meta property="og:title" content="CIA & TOWER | Sarajevo">
+  <meta property="og:description" content="Osiguranje, posredovanje i konsalting — dvije firme, jedan pouzdan partner.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="bs_BA">
+  <title>CIA & TOWER | Osiguranje i konsalting Sarajevo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a class="brand" href="#pocetna"><span class="mark">C<span>T</span></span><b>CIA <i>&</i> TOWER<small>Sarajevo</small></b></a>
-    <button class="menu" aria-label="Otvori meni" aria-expanded="false"><span></span><span></span></button>
-    <nav>
-      <a href="#o-nama">O nama</a><a href="#tower">TOWER usluge</a><a href="#cia">CIA consulting</a><a class="nav-cta" href="#kontakt">Kontakt</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header">
+    <a class="brand" href="#pocetna" aria-label="CIA i TOWER — početna">
+      <span class="brand-mark" aria-hidden="true">
+        <span class="brand-c">C</span><span class="brand-t">T</span>
+      </span>
+      <span class="brand-name">
+        <strong>CIA <i>&</i> TOWER</strong>
+        <small>Sarajevo</small>
+      </span>
+    </a>
+
+    <button class="menu" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="glavna-navigacija">
+      <span></span><span></span>
+    </button>
+
+    <nav id="glavna-navigacija" aria-label="Glavna navigacija">
+      <a href="#o-nama">O nama</a>
+      <a href="#tower">TOWER usluge</a>
+      <a href="#cia">CIA consulting</a>
+      <a class="nav-cta" href="#kontakt">Kontakt <span>↗</span></a>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="pocetna">
-      <div class="orb one"></div><div class="orb two"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="orb orb-one" data-parallax="-0.035"></div>
+      <div class="orb orb-two" data-parallax="0.025"></div>
+
       <div class="hero-copy">
-        <p class="eyebrow entrance d1">Osiguranje · Posredovanje · Konsalting</p>
-        <h1 class="entrance d2">Dvije firme.<br><em>Jedan pouzdan<br>partner.</em></h1>
-        <p class="lead entrance d3">Profesionalna podrška za osiguranje, vozila i poslovne odluke — jednostavno, efikasno i na jednom mjestu.</p>
-        <div class="actions entrance d4"><a class="button purple" href="#tower">Istražite usluge <b>↗</b></a><a class="phone" href="tel:+38761231793">Pozovite nas<strong>+387 61 231 793</strong></a></div>
+        <p class="eyebrow entrance delay-1"><span></span> Osiguranje · Posredovanje · Konsalting</p>
+        <h1 class="entrance delay-2">Dvije firme.<br><em>Jedan pouzdan</em><br>partner.</h1>
+        <p class="lead entrance delay-3">Profesionalna podrška za osiguranje, vozila i poslovne odluke — jednostavno, efikasno i na jednom mjestu.</p>
+        <div class="hero-actions entrance delay-4">
+          <a class="button button-primary" href="#tower"><span>Istražite usluge</span><b>↗</b></a>
+          <a class="phone-link" href="tel:+38761231793">
+            <small>Pozovite nas</small>
+            <strong>+387 61 231 793</strong>
+          </a>
+        </div>
       </div>
-      <div class="visual entrance d3">
-        <article class="float-card cia-card"><b>CIA</b><small>CONSULTING & INTERMEDIATION</small><strong>Poslovne ideje pretvaramo<br>u jasne korake.</strong><i>→</i></article>
-        <article class="float-card tower-card"><b>TOWER</b><small>ZASTUPANJE U OSIGURANJU</small><strong>Sigurnost počinje<br>pravim izborom.</strong><i>→</i></article>
-        <div class="ring"><span></span></div>
+
+      <div class="hero-visual entrance delay-3" aria-label="CIA i TOWER">
+        <div class="orbit" aria-hidden="true"><span></span><i></i></div>
+
+        <article class="float-card cia-card">
+          <div class="card-top"><b>CIA</b><span>01</span></div>
+          <small>CONSULTING & INTERMEDIATION</small>
+          <strong>Poslovne ideje pretvaramo<br>u jasne korake.</strong>
+          <i>↗</i>
+        </article>
+
+        <article class="float-card tower-card">
+          <div class="card-top"><b>TOWER</b><span>02</span></div>
+          <small>ZASTUPANJE U OSIGURANJU</small>
+          <strong>Sigurnost počinje<br>pravim izborom.</strong>
+          <i>↗</i>
+        </article>
+
+        <div class="visual-center" aria-hidden="true"><span>C</span><i>&</i><span>T</span></div>
+      </div>
+
+      <a class="scroll-cue entrance delay-4" href="#o-nama">
+        <span>Skrolujte</span><i></i>
+      </a>
+    </section>
+
+    <section class="trust-strip" aria-label="Naš pristup">
+      <div>
+        <p><span>01</span> Jednostavan proces</p>
+        <p><span>02</span> Lični pristup</p>
+        <p><span>03</span> Pouzdana podrška</p>
+        <p><span>04</span> Sve na jednom mjestu</p>
       </div>
     </section>
 
-    <section class="section" id="o-nama">
-      <div class="kicker reveal"><span>01</span>Ko smo mi</div>
-      <div class="intro">
-        <h2 class="reveal">Rješenja koja štede<br><em>vaše vrijeme.</em></h2>
-        <div class="reveal">
+    <section class="section about" id="o-nama">
+      <div class="section-label reveal"><span>01</span><p>Ko smo mi</p></div>
+
+      <div class="about-layout">
+        <div>
+          <p class="eyebrow reveal"><span></span> Zajedno smo efikasniji</p>
+          <h2 class="reveal">Rješenja koja štede<br><em>vaše vrijeme.</em></h2>
+        </div>
+
+        <div class="about-copy reveal">
           <p class="copy">CIA d.o.o. i TOWER okupljaju iskustvo, pouzdanost i lični pristup. Pomažemo građanima i poslovnim klijentima da lakše riješe važne administrativne, osiguravajuće i poslovne potrebe.</p>
+
           <div class="values">
-            <article><span>01</span><div><b>Jasno</b><p>Komuniciramo razumljivo i bez komplikovanja.</p></div></article>
-            <article><span>02</span><div><b>Pouzdano</b><p>Svaki predmet vodimo pažljivo i odgovorno.</p></div></article>
-            <article><span>03</span><div><b>Lično</b><p>Rješenja prilagođavamo stvarnim potrebama klijenta.</p></div></article>
+            <article>
+              <span>01</span>
+              <div><h3>Jasno</h3><p>Komuniciramo razumljivo i bez nepotrebnog komplikovanja.</p></div>
+            </article>
+            <article>
+              <span>02</span>
+              <div><h3>Pouzdano</h3><p>Svaki predmet vodimo pažljivo, stručno i odgovorno.</p></div>
+            </article>
+            <article>
+              <span>03</span>
+              <div><h3>Lično</h3><p>Rješenja prilagođavamo stvarnim potrebama svakog klijenta.</p></div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="dark section" id="tower">
-      <div class="kicker reveal"><span>02</span>OD Agencija za zastupanje u osiguranju „TOWER“</div>
-      <div class="heading reveal"><div><p class="eyebrow">Sve što vam treba. Na jednom mjestu.</p><h2>Sigurnost bez<br><em>komplikacija.</em></h2></div><p>Od registracije vozila do osiguranja imovine i pomoći kod odštetnih zahtjeva — vodimo vas kroz svaki korak.</p></div>
-      <div class="services">
-        <article class="reveal"><span>01</span><h3>Registracija vozila</h3><p>Sve na jednom mjestu, brzo i bez nepotrebnog čekanja.</p><i>↗</i></article>
-        <article class="reveal"><span>02</span><h3>Kasko osiguranje</h3><p>Zaštita vozila prilagođena vašim potrebama i navikama.</p><i>↗</i></article>
-        <article class="reveal"><span>03</span><h3>Kasko sudar</h3><p>Jednostavnija procedura i podrška kada je najpotrebnija.</p><i>↗</i></article>
-        <article class="reveal"><span>04</span><h3>Zaštita bonusa</h3><p>Sačuvajte ostvareni bonus i nakon prijavljene štete.</p><i>↗</i></article>
-        <article class="reveal"><span>05</span><h3>Tehnički pregled</h3><p>Pouzdana podrška kroz kompletan proces pregleda vozila.</p><i>↗</i></article>
-        <article class="reveal"><span>06</span><h3>Putno zdravstveno osiguranje</h3><p>Putujte mirnije uz pokriće koje prati vaš plan puta.</p><i>↗</i></article>
-        <article class="reveal"><span>07</span><h3>Prevod vozila</h3><p>Praktična pomoć pri uvozu i potrebnoj dokumentaciji.</p><i>↗</i></article>
-        <article class="reveal"><span>08</span><h3>Kupoprodajni ugovori</h3><p>Brza priprema ugovora za sigurnu kupoprodaju vozila.</p><i>↗</i></article>
-        <article class="reveal"><span>09</span><h3>Osiguranje imovine</h3><p>Zaštita doma, poslovnog prostora i vrijedne imovine.</p><i>↗</i></article>
-        <article class="reveal"><span>10</span><h3>Dopunsko zdravstveno osiguranje</h3><p>Dodatna sigurnost i bolji pristup zdravstvenim uslugama.</p><i>↗</i></article>
-        <article class="reveal"><span>11</span><h3>Pomoć kod odštetnih zahtjeva</h3><p>Stručna podrška od prijave štete do rješavanja zahtjeva.</p><i>↗</i></article>
+    <section class="section dark" id="tower">
+      <div class="dark-glow" aria-hidden="true"></div>
+      <div class="section-label section-label-light reveal"><span>02</span><p>OD Agencija za zastupanje u osiguranju „TOWER“</p></div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow-light reveal"><span></span> Sve što vam treba. Na jednom mjestu.</p>
+          <h2 class="reveal">Sigurnost bez<br><em>komplikacija.</em></h2>
+        </div>
+        <p class="heading-copy reveal">Od registracije vozila do osiguranja imovine i pomoći kod odštetnih zahtjeva — vodimo vas kroz svaki korak.</p>
+      </div>
+
+      <div class="services stagger-group">
+        <article class="reveal service-card"><span>01</span><h3>Registracija vozila</h3><p>Sve na jednom mjestu, brzo i bez nepotrebnog čekanja.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>02</span><h3>Kasko osiguranje</h3><p>Zaštita vozila prilagođena vašim potrebama i navikama.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>03</span><h3>Kasko sudar</h3><p>Jednostavnija procedura i podrška kada je najpotrebnija.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>04</span><h3>Zaštita bonusa</h3><p>Sačuvajte ostvareni bonus i nakon prijavljene štete.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>05</span><h3>Tehnički pregled</h3><p>Pouzdana podrška kroz kompletan proces pregleda vozila.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>06</span><h3>Putno zdravstveno osiguranje</h3><p>Putujte mirnije uz pokriće koje prati vaš plan puta.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>07</span><h3>Prevod vozila</h3><p>Praktična pomoć pri uvozu i potrebnoj dokumentaciji.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>08</span><h3>Kupoprodajni ugovori</h3><p>Brza priprema ugovora za sigurnu kupoprodaju vozila.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>09</span><h3>Osiguranje imovine</h3><p>Zaštita doma, poslovnog prostora i vrijedne imovine.</p><i>↗</i></article>
+        <article class="reveal service-card"><span>10</span><h3>Dopunsko zdravstveno osiguranje</h3><p>Dodatna sigurnost i bolji pristup zdravstvenim uslugama.</p><i>↗</i></article>
+        <article class="reveal service-card service-card-wide"><span>11</span><h3>Pomoć kod odštetnih zahtjeva</h3><p>Stručna podrška od prijave štete do rješavanja zahtjeva.</p><i>↗</i></article>
+        <a class="service-contact reveal" href="#kontakt">
+          <small>Niste pronašli ono što tražite?</small>
+          <strong>Pošaljite nam upit</strong>
+          <i>↗</i>
+        </a>
       </div>
     </section>
 
-    <section class="section" id="cia">
-      <div class="kicker reveal"><span>03</span>Consulting & Intermediation Agency — CIA d.o.o. Sarajevo</div>
+    <section class="section cia-section" id="cia">
+      <div class="section-label reveal"><span>03</span><p>Consulting & Intermediation Agency — CIA d.o.o. Sarajevo</p></div>
+
       <div class="cia-layout">
-        <div class="reveal"><p class="eyebrow">Posredovanje i konsalting</p><h2>Pravi spoj ideje,<br><em>strategije i prilike.</em></h2><p class="copy">Povezujemo ljude, kompanije i mogućnosti. Uz praktičan pristup pomažemo vam da donesete informisane odluke i poslovne planove pretvorite u konkretne rezultate.</p><a class="button black" href="#kontakt">Razgovarajmo o saradnji <b>↗</b></a></div>
+        <div class="cia-copy">
+          <p class="eyebrow reveal"><span></span> Posredovanje i konsalting</p>
+          <h2 class="reveal">Pravi spoj ideje,<br><em>strategije i prilike.</em></h2>
+          <p class="copy reveal">Povezujemo ljude, kompanije i mogućnosti. Uz praktičan pristup pomažemo vam da donesete informisane odluke i poslovne planove pretvorite u konkretne rezultate.</p>
+          <a class="button button-dark reveal" href="#kontakt"><span>Razgovarajmo o saradnji</span><b>↗</b></a>
+        </div>
+
         <div class="cia-panel reveal">
-          <article><span>01</span><div><h3>Poslovno posredovanje</h3><p>Povezivanje sa pravim partnerima i prilikama.</p></div></article>
-          <article><span>02</span><div><h3>Strateški konsalting</h3><p>Jasna analiza, preporuke i plan narednih koraka.</p></div></article>
-          <article><span>03</span><div><h3>Podrška u realizaciji</h3><p>Pratimo proces od početne ideje do ostvarenog cilja.</p></div></article>
+          <div class="panel-mark" aria-hidden="true">CIA</div>
+          <article><span>01</span><div><h3>Poslovno posredovanje</h3><p>Povezivanje sa pravim partnerima i prilikama.</p></div><i>↗</i></article>
+          <article><span>02</span><div><h3>Strateški konsalting</h3><p>Jasna analiza, preporuke i plan narednih koraka.</p></div><i>↗</i></article>
+          <article><span>03</span><div><h3>Podrška u realizaciji</h3><p>Pratimo proces od početne ideje do ostvarenog cilja.</p></div><i>↗</i></article>
         </div>
       </div>
     </section>
 
     <section class="contact section" id="kontakt">
       <div class="contact-card reveal">
-        <div><p class="eyebrow">Tu smo za vas</p><h2>Imate pitanje?<br><em>Javite nam se.</em></h2><a class="mail" href="mailto:info@ciatower.com">info@ciatower.com <b>↗</b></a></div>
-        <div class="details"><article><span>Adresa</span><p>Džavida Haverića 6<br>71000 Sarajevo</p></article><article><span>Telefon</span><p><a href="tel:+38761231793">+387 61 231 793</a></p></article><article><span>Radno vrijeme</span><p>Ponedjeljak – petak<br>09:00 – 17:00</p></article></div>
+        <div class="contact-intro">
+          <p class="eyebrow"><span></span> Tu smo za vas</p>
+          <h2>Imate pitanje?<br><em>Javite nam se.</em></h2>
+          <p>Recite nam šta vam je potrebno. Rado ćemo vas saslušati i pomoći da pronađete sljedeći pravi korak.</p>
+          <a class="mail" href="mailto:info@ciatower.com"><span>info@ciatower.com</span><b>↗</b></a>
+        </div>
+
+        <div class="details">
+          <article><span>Adresa</span><p>Džavida Haverića 6<br>71000 Sarajevo</p></article>
+          <article><span>Telefon</span><p><a href="tel:+38761231793">+387 61 231 793</a></p></article>
+          <article><span>Radno vrijeme</span><p>Ponedjeljak – petak<br>09:00 – 17:00</p></article>
+          <a class="contact-button" href="tel:+38761231793"><span>Pozovite nas</span><b>↗</b></a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer><a class="brand" href="#pocetna"><span class="mark">C<span>T</span></span><b>CIA <i>&</i> TOWER<small>Sarajevo</small></b></a><p>© 2026 CIA d.o.o. & TOWER. Sva prava zadržana.</p><a href="#pocetna">Nazad na vrh ↑</a></footer>
+  <footer>
+    <a class="brand footer-brand" href="#pocetna" aria-label="CIA i TOWER — nazad na početak">
+      <span class="brand-mark" aria-hidden="true"><span class="brand-c">C</span><span class="brand-t">T</span></span>
+      <span class="brand-name"><strong>CIA <i>&</i> TOWER</strong><small>Sarajevo</small></span>
+    </a>
+    <p>© 2026 CIA d.o.o. & TOWER. Sva prava zadržana.</p>
+    <a class="to-top" href="#pocetna">Nazad na vrh <span>↑</span></a>
+  </footer>
 
   <script>
-    const menu = document.querySelector(".menu"), nav = document.querySelector("nav");
-    menu.addEventListener("click", () => { const open = nav.classList.toggle("open"); menu.setAttribute("aria-expanded", open); });
-    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
-    }), { threshold: .12, rootMargin: "0px 0px -40px" });
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+    const header = document.querySelector(".site-header");
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector("nav");
+    const navLinks = [...nav.querySelectorAll("a[href^='#']")];
+    const progress = document.querySelector(".scroll-progress span");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function closeMenu() {
+      nav.classList.remove("open");
+      menu.classList.remove("active");
+      menu.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+
+    menu.addEventListener("click", () => {
+      const open = !nav.classList.contains("open");
+      nav.classList.toggle("open", open);
+      menu.classList.toggle("active", open);
+      menu.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("menu-open", open);
+    });
+
+    navLinks.forEach(link => link.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const group = entry.target.closest(".stagger-group");
+        if (group) {
+          [...group.querySelectorAll(".reveal")].forEach((item, index) => {
+            item.style.transitionDelay = `${Math.min(index % 4, 3) * 90}ms`;
+          });
+        }
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.11, rootMargin: "0px 0px -45px" });
+
+    document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
+
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => {
+          link.classList.toggle("active-link", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-35% 0px -55% 0px" });
+    sections.forEach(section => sectionObserver.observe(section));
+
+    let ticking = false;
+    function updateOnScroll() {
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+      header.classList.toggle("scrolled", y > 24);
+
+      if (!reduceMotion) {
+        document.querySelectorAll("[data-parallax]").forEach(element => {
+          const amount = Number(element.dataset.parallax);
+          element.style.transform = `translate3d(0, ${y * amount}px, 0)`;
+        });
+      }
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(updateOnScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateOnScroll();
   </script>
 </body>
 </html>
