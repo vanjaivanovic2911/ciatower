@@ -5,7 +5,7 @@ const progress = document.querySelector(".progress");
 const heroImage = document.querySelector(".hero-image");
 const crests = [...document.querySelectorAll(".crest")].map(crest => ({
   crest,
-  logo: crest.querySelector(".logo")
+  onHero: Boolean(crest.closest(".showcase"))
 }));
 const motion = matchMedia("(prefers-reduced-motion: reduce)");
 const mobile = matchMedia("(max-width: 730px)");
@@ -53,19 +53,19 @@ function clamp(value) {
 }
 
 function moveLogos() {
-  const positions = crests.map(({ crest }) => crest.getBoundingClientRect());
-  crests.forEach(({ crest, logo }, index) => {
-    if (motion.matches) {
-      crest.style.removeProperty("--travel");
-      logo.style.removeProperty("--motion");
-      return;
-    }
-    const { top, height } = positions[index];
-    const middle = top + height / 2;
-    const position = clamp((innerHeight - middle) / innerHeight) * 2 - 1;
-    crest.style.setProperty("--travel", position.toFixed(3));
-    logo.style.setProperty("--motion", (1 - Math.abs(position)).toFixed(3));
+  if (motion.matches) {
+    crests.forEach(({ crest }) => crest.style.removeProperty("--logo-offset"));
+    return;
+  }
+
+  const offsets = crests.map(({ crest, onHero }) => {
+    const { top, bottom, left } = crest.getBoundingClientRect();
+    const unseen = onHero
+      ? clamp((innerHeight * .58 - bottom) / (innerHeight * .58))
+      : clamp((top - innerHeight * .42) / (innerHeight * .58));
+    return Math.round((innerWidth - left + 24) * unseen);
   });
+  crests.forEach(({ crest }, index) => crest.style.setProperty("--logo-offset", `${offsets[index]}px`));
 }
 
 function updateScroll() {
