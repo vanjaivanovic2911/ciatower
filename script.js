@@ -3,6 +3,10 @@ const nav = document.querySelector("#navigacija");
 const toggle = document.querySelector(".menu-toggle");
 const progress = document.querySelector(".progress");
 const heroImage = document.querySelector(".hero-image");
+const crests = [...document.querySelectorAll(".crest")].map(crest => ({
+  crest,
+  logo: crest.querySelector(".logo")
+}));
 const motion = matchMedia("(prefers-reduced-motion: reduce)");
 const mobile = matchMedia("(max-width: 730px)");
 
@@ -44,9 +48,29 @@ const links = [...nav.querySelectorAll("a")];
 const sections = links.map(link => document.querySelector(link.hash));
 let scheduled = false;
 
+function clamp(value) {
+  return Math.min(1, Math.max(0, value));
+}
+
+function moveLogos() {
+  const positions = crests.map(({ crest }) => crest.getBoundingClientRect());
+  crests.forEach(({ crest, logo }, index) => {
+    if (motion.matches) {
+      crest.style.removeProperty("--travel");
+      logo.style.removeProperty("--motion");
+      return;
+    }
+    const { top, height } = positions[index];
+    const middle = top + height / 2;
+    const position = clamp((innerHeight - middle) / innerHeight) * 2 - 1;
+    crest.style.setProperty("--travel", position.toFixed(3));
+    logo.style.setProperty("--motion", (1 - Math.abs(position)).toFixed(3));
+  });
+}
+
 function updateScroll() {
   const limit = document.documentElement.scrollHeight - innerHeight;
-  progress.style.transform = `scaleX(${limit > 0 ? Math.min(1, Math.max(0, scrollY / limit)) : 0})`;
+  progress.style.transform = `scaleX(${limit > 0 ? clamp(scrollY / limit) : 0})`;
   heroImage.style.translate = motion.matches || mobile.matches ? "" : `0 ${Math.min(scrollY * 0.12, 105)}px`;
 
   const marker = header.offsetHeight + innerHeight * 0.26;
@@ -58,6 +82,7 @@ function updateScroll() {
     if (index === current) link.setAttribute("aria-current", "location");
     else link.removeAttribute("aria-current");
   });
+  moveLogos();
   scheduled = false;
 }
 
