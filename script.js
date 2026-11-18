@@ -103,3 +103,63 @@ addEventListener("scroll", scheduleScroll, { passive: true });
 addEventListener("resize", scheduleScroll);
 addEventListener("load", scheduleScroll);
 updateScroll();
+
+// Ease discrete mouse-wheel steps while leaving small trackpad deltas native.
+let wheelFrame = 0;
+let wheelTarget = 0;
+let wheelPosition = 0;
+let lastWheelY = 0;
+let lastWheelTime = 0;
+
+function stopWheelScroll() {
+  cancelAnimationFrame(wheelFrame);
+  wheelFrame = 0;
+}
+
+function animateWheelScroll(time) {
+  wheelFrame = 0;
+  if (motion.matches || Math.abs(scrollY - lastWheelY) > 2) return;
+
+  const limit = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+  wheelTarget = Math.min(wheelTarget, limit);
+  const ease = 1 - Math.exp(-(time - lastWheelTime) / 130);
+  lastWheelTime = time;
+  wheelPosition += (wheelTarget - wheelPosition) * ease;
+
+  const arrived = Math.abs(wheelTarget - wheelPosition) < 1;
+  window.scrollTo({ top: arrived ? wheelTarget : wheelPosition, behavior: "instant" });
+  lastWheelY = scrollY;
+  if (!arrived) wheelFrame = requestAnimationFrame(animateWheelScroll);
+}
+
+function easeWheelStep(event) {
+  if (motion.matches || !event.cancelable || event.defaultPrevented || event.ctrlKey || event.shiftKey) return;
+
+  const mode = event.deltaMode;
+  const delta = event.deltaY;
+  if (!delta || Math.abs(event.deltaX) >= Math.abs(delta)) return;
+  if (mode === WheelEvent.DOM_DELTA_PIXEL && Math.abs(delta) < 50) {
+    stopWheelScroll();
+    return;
+  }
+
+  const multiplier = mode === WheelEvent.DOM_DELTA_LINE ? 16
+    : mode === WheelEvent.DOM_DELTA_PAGE ? innerHeight : 1;
+  const limit = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+  const start = wheelFrame ? wheelTarget : scrollY;
+  const target = Math.min(limit, Math.max(0, start + delta * multiplier));
+  if (!wheelFrame && target === start) return;
+
+  event.preventDefault();
+  wheelTarget = target;
+  if (!wheelFrame) {
+    wheelPosition = scrollY;
+    lastWheelY = scrollY;
+    lastWheelTime = performance.now();
+    wheelFrame = requestAnimationFrame(animateWheelScroll);
+  }
+}
+
+addEventListener("wheel", easeWheelStep, { passive: false });
+addEventListener("keydown", stopWheelScroll, { passive: true });
+addEventListener("pointerdown", stopWheelScroll, { passive: true });
