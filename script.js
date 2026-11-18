@@ -71,7 +71,10 @@ function moveLogos() {
 function updateScroll() {
   const limit = document.documentElement.scrollHeight - innerHeight;
   progress.style.transform = `scaleX(${limit > 0 ? clamp(scrollY / limit) : 0})`;
-  heroImage.style.translate = motion.matches || mobile.matches ? "" : `0 ${Math.min(scrollY * 0.12, 105)}px`;
+  if (!motion.matches && !mobile.matches) {
+    const offset = Math.round(118 * clamp(scrollY / 620));
+    heroImage.style.setProperty("--parallax-y", `${offset}px`);
+  }
 
   const marker = header.offsetHeight + innerHeight * 0.26;
   let current = -1;

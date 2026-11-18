@@ -97,9 +97,9 @@ nav a:hover::after, nav a[aria-current]::after { transform: scaleX(1); }
 .hero-image {
   position: absolute;
   z-index: -1;
-  inset: -110px 0 0;
+  inset: 0;
   background:
-    linear-gradient(90deg, #0b1612 2%, rgb(11 22 18 / .89) 37%, rgb(11 22 18 / .3) 100%),
+    linear-gradient(90deg, #0b1612 2%, rgb(11 22 18 / .88) 39%, rgb(11 22 18 / .22) 100%),
     linear-gradient(0deg, #111d19, transparent 43%),
     url("assets/architecture.jpg") center 54% / cover no-repeat,
     radial-gradient(ellipse at 72% 31%, #496457 0%, #21372e 30%, #0b1612 70%);
@@ -188,7 +188,41 @@ nav a:hover::after, nav a[aria-current]::after { transform: scaleX(1); }
   pointer-events: none;
 }
 .about, .cia { --photo: url("assets/lobby.jpg"); --veil: linear-gradient(95deg, #f8f4ecf7, #f8f4ece3 55%, #f5eddfc5); }
-.cia { --veil: linear-gradient(96deg, #f3eadbb5, #f8f4ecf8 54%); }
+.cia {
+  --veil: linear-gradient(96deg, #f8f4ec 8%, #f8f4ecf7 46%, #f4e9d7a6 100%);
+  background-color: var(--paper);
+}
+.cia::before { filter: blur(4px); }
+
+.brand-transition { isolation: isolate; }
+.brand-transition-panel {
+  display: grid;
+  place-items: center;
+  min-height: 8rem;
+  padding: 1rem;
+  pointer-events: none;
+  background: linear-gradient(105deg, #0b1612ee, #21382ac9, #0b1612e8),
+    url("assets/architecture.jpg") center 61% / cover, var(--forest);
+  border-block: 1px solid var(--dark-line);
+}
+.brand-transition-panel img {
+  width: auto;
+  height: clamp(4.5rem, 11svh, 7.5rem);
+  filter: brightness(0) invert(1) sepia(.2);
+}
+.brand-transition .cia { z-index: 1; }
+
+@media (min-width: 731px) and (prefers-reduced-motion: no-preference) {
+  .hero-image {
+    inset: -126px 0 0;
+    transform: translateY(var(--parallax-y, 0px));
+  }
+  .brand-transition-panel {
+    position: sticky;
+    top: var(--header);
+    min-height: clamp(10rem, 31svh, 18rem);
+  }
+}
 .values { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(1rem, 3vw, 2.5rem); }
 .values article { padding-block: 1.5rem; border-top: 1px solid var(--line); }
 .values h3, .cia-services h3 { font: 600 1.43rem/1.2 var(--display); margin-bottom: .45rem; }
@@ -307,7 +341,7 @@ nav a:hover::after, nav a[aria-current]::after { transform: scaleX(1); }
   .js .header nav a::after { display: none; }
   .hero-grid, .section-head, .cia-layout, .contact-layout { grid-template-columns: 1fr; }
   .hero-grid { gap: 3.4rem; padding-block: 3.5rem 4rem; }
-  .hero-image { inset: 0; background-position: center, center, 67% center, center; }
+  .hero-image { background-position: center, center, 67% center, center; }
   .hero h1 { font-size: clamp(2.8rem, 10.6vw, 5rem); }
   .showcase { width: min(100%, 26rem); margin-inline: auto; }
   .trust .wrap { grid-template-columns: repeat(2, 1fr); }
